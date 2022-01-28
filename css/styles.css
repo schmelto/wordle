@@ -1,5 +1,5 @@
 body {
-  background-image: url(https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80);
+  background-color: #202124;
   font: 1em sans-serif;
 }
 
@@ -53,10 +53,7 @@ input[type="submit"]{
 input[type="submit"]:hover{
   background: #C0392B;
 }
-.grid {
-  columns: 2;
-  column-gap:  10px;
-}
+
 .card {
   margin: auto;
   width: 80vw;
@@ -69,16 +66,3 @@ input[type="submit"]:hover{
   margin-bottom: 1rem
 }
 
-/* media query for mobile */
-@media screen and (max-width: 901px) {
-  .grid {
-    columns: 1;
-  }
-}
-
-/* media query for desktop */
-@media screen and (min-width: 901px) {
-  .grid {
-    columns: 2;
-  }
-}

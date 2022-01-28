@@ -139,6 +139,30 @@ function remove_missing_letters() {
 			letters.letter2.splice(index, 1);
 		}
 	}
+	// remove the missing letters from letter3
+	for (let i = 0; i < missing_letters.length; i++) {
+		let letter = missing_letters[i];
+		let index = letters.letter3.indexOf(letter);
+		if (index > -1) {
+			letters.letter3.splice(index, 1);
+		}
+	}
+	// remove the missing letters from letter4
+	for (let i = 0; i < missing_letters.length; i++) {
+		let letter = missing_letters[i];
+		let index = letters.letter4.indexOf(letter);
+		if (index > -1) {
+			letters.letter4.splice(index, 1);
+		}
+	}
+	// remove the missing letters from letter5
+	for (let i = 0; i < missing_letters.length; i++) {
+		let letter = missing_letters[i];
+		let index = letters.letter5.indexOf(letter);
+		if (index > -1) {
+			letters.letter5.splice(index, 1);
+		}
+	}
 
 	set_letters();
 
