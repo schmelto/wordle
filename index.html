@@ -1,30 +1,55 @@
-<!doctype html>
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
+	<head>
+		<title>Wordle Solver</title>
+		<meta name="description" content="">
+		<meta name="author" content="">
 
-        <title>The HTML5 Herald</title>
-        <meta name="description" content="">
-        <meta name="author" content="">
+		<link rel="stylesheet" href="css/styles.css">
 
-        <link rel="stylesheet" href="css/styles.css">
+	</head>
 
-    </head>
+	<body>
 
-    <body>
-
-        <input type="text" id="black_letters">
-
-        <input type="text" id="letter1">
-        <input type="text" id="letter2">
-        <input type="text" id="letter3">
-        <input type="text" id="letter4">
-        <input type="text" id="letter5">
+		<h1>Wordle Solver</h1>
 
 
-        <input type="text" id="orange_letters">
+		<div class="grid card">
+			<label for="black_letters">Black Letters</h2>
+				<input type="text" id="black_letters" placeholder="Black Letters" />
+			<br>
+			<label for="orange_letters">Orange Letters</h2>
+				<input type="text" id="orange_letters" placeholder="Orange Letters" />
+		</div>
+		<div class="grid card">
+			<label for="letter1">Letter1</h2>
+			<input type="text" id="letter1" placeholder="Letter1" />
+			<!-- letter2 -->
+			<br>
+			<label for="letter2">Letter2</h2>
+			<input type="text" id="letter2" placeholder="Letter2" />
+			<!-- letter3 -->
+			<br>
+			<label for="letter3">Letter3</h2>
+			<input type="text" id="letter3" placeholder="Letter3" />
+			<!-- letter4 -->
+			<br>
+			<label for="letter4">Letter4</h2>
+			<input type="text" id="letter4" placeholder="Letter4" />
+			<!-- letter5 -->
+			<br>
+			<label for="letter5">Letter5</h2>
+			<input type="text" id="letter5" placeholder="Letter5" />
 
-        <script src="js/index.js"></script>
-    </body>
+		</div>
+		<div class="card">
+			<input type="submit" onclick="set_matched_words()" value="See available words">
+		</div>
+		<div class="card">
+			<ol id="matched_words">
+			</ol>
+		</div>
+
+		<script src="js/index copy.js"></script>
+	</body>
 </html>

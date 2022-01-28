@@ -1,0 +1,23 @@
+{
+  "name": "wordle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schmelto/wordle.git"
+  },
+  "author": "schmelto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/schmelto/wordle/issues"
+  },
+  "homepage": "https://github.com/schmelto/wordle#readme",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
+}

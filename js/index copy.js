@@ -1,68 +1,148 @@
-// let letter1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-// let letter2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-// let letter3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-// let letter4 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-// let letter5 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-let letter1 = "T";
-let letter2 = "H";
-let letter3 = "E";
-let letter4 = "R";
-let letter5 = "E";
-
-let orange_letters = ""
-let black_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-// set the initial value of the letters on document load
-window.onload = function () {
-	document.getElementById("letter1").value = letter1;
-	document.getElementById("letter2").value = letter2;
-	document.getElementById("letter3").value = letter3;
-	document.getElementById("letter4").value = letter4;
-	document.getElementById("letter5").value = letter5;
-	document.getElementById("black_letters").value = black_letters;
-	// document.getElementById("orange_letters").value = orange_letters;
-};
-
-
-
-function get_matched_words() {
-	let letter1 = "T";
-	let letter2 = "H";
-	let letter3 = "E";
-	let letter4 = "R";
-	let letter5 = "E";
-
-	// get return of wordlist
-	let wordlist = get_wordlist();
-
-	// get the letters from the input fields
-	// let letter1 = document.getElementById("letter1").value;
-	// let letter2 = document.getElementById("letter2").value;
-	// let letter3 = document.getElementById("letter3").value;
-	// let letter4 = document.getElementById("letter4").value;
-	// let letter5 = document.getElementById("letter5").value;
-	
-	console.log(wordlist)
-
-	// search in wordlist for the letters
-	let matched_words = [];
-	for (let i = 0; i < wordlist.length; i++) {
-
-		for (let j = 0; j < letter1.length; j++) {
-			if (wordlist[i].includes(letter1[j])) {
-				matched_words.push(wordlist[i]);
-			}
-		}
-
-		// if (wordlist[i].includes(letter1) && wordlist[i].includes(letter2) && wordlist[i].includes(letter3) && wordlist[i].includes(letter4) && wordlist[i].includes(letter5)) {
-		// 	matched_words.push(wordlist[i]);
-		// }
-	}
-	console.log(matched_words)
-
+let letters = {
+	letter1: ["A", "B" , "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+	letter2: ["A", "B" , "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+	letter3: ["A", "B" , "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+	letter4: ["A", "B" , "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+	letter5: ["A", "B" , "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+	black_letters: ["A", "B" , "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+	orange_letters: [],
 }
 
+window.onload = function() {
+set_letters();
+}
+
+function set_letters() {
+	document.getElementById("letter1").value = letters.letter1.join("");
+	document.getElementById("letter2").value = letters.letter2.join("");
+	document.getElementById("letter3").value = letters.letter3.join("");
+	document.getElementById("letter4").value = letters.letter4.join("");
+	document.getElementById("letter5").value = letters.letter5.join("");
+	document.getElementById("black_letters").value = letters.black_letters.join("");
+	document.getElementById("orange_letters").value = letters.orange_letters.join("");
+}
+function get_letters() {
+	letters.letter1 = document.getElementById("letter1").value.split("");
+	letters.letter2 = document.getElementById("letter2").value.split("");
+	letters.letter3 = document.getElementById("letter3").value.split("");
+	letters.letter4 = document.getElementById("letter4").value.split("");
+	letters.letter5 = document.getElementById("letter5").value.split("");
+	letters.black_letters = document.getElementById("black_letters").value.split("");
+	letters.orange_letters = document.getElementById("orange_letters").value.split("");
+}
+function get_matched_words(){
+	get_letters();
+	let wordlist = get_wordlist();
+	let matched_words = [];
+	// check if letter1 is in the first letter of the word in wordlist
+	for (let i = 0; i < wordlist.length; i++) {
+		if (letters.letter1.includes(wordlist[i][0])) {
+			matched_words.push(wordlist[i]);
+		}
+	}
+	// check if letter2 is in the second letter of the word in wordlist
+	let matched_words2 = [];
+	for (let i = 0; i < matched_words.length; i++) {
+		if (letters.letter2.includes(matched_words[i][1])) {
+			matched_words2.push(matched_words[i]);
+		}
+	}
+	// check if letter3 is in the third letter of the word in wordlist
+	let matched_words3 = [];
+	for (let i = 0; i < matched_words2.length; i++) {
+		if (letters.letter3.includes(matched_words2[i][2])) {
+			matched_words3.push(matched_words2[i]);
+		}
+	}
+	// check if letter4 is in the fourth letter of the word in wordlist
+	let matched_words4 = [];
+	for (let i = 0; i < matched_words3.length; i++) {
+		if (letters.letter4.includes(matched_words3[i][3])) {
+			matched_words4.push(matched_words3[i]);
+		}
+	}
+	// check if letter5 is in the fifth letter of the word in wordlist
+	let matched_words5 = [];
+	for (let i = 0; i < matched_words4.length; i++) {
+		if (letters.letter5.includes(matched_words4[i][4])) {
+			matched_words5.push(matched_words4[i]);
+		}
+	}
+
+	// check if orange_letters is in the word if yes leave the word in matched_words5
+	let matched_words6 = [];
+	for (let i = 0; i < matched_words5.length; i++) {
+		let word = matched_words5[i];
+		let word_letters = word.split("");
+		let word_letters_length = word_letters.length;
+		let orange_letters_length = letters.orange_letters.length;
+		let orange_letters_in_word = 0;
+		for (let j = 0; j < orange_letters_length; j++) {
+			for (let k = 0; k < word_letters_length; k++) {
+				if (letters.orange_letters[j] == word_letters[k]) {
+					orange_letters_in_word++;
+				}
+			}
+		}
+		if (orange_letters_in_word == orange_letters_length) {
+			matched_words6.push(word);
+		}
+	}
+	remove_missing_letters()
+	console.log(matched_words6);
+
+	return matched_words6;
+}
+
+function set_matched_words(){
+	let matched_words = get_matched_words();
+	// append matched words to the div as a list
+	let div = document.getElementById("matched_words");
+	div.innerHTML = "";
+	for (let i = 0; i < matched_words.length; i++) {
+		let p = document.createElement("li");
+		p.innerHTML = matched_words[i];
+		div.appendChild(p);
+	}
+}
+
+
+function get_missing_letters() {
+	let all_letters = ["A", "B" , "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
+	// check which letters are missing in black_letters
+	let missing_letters = [];
+	for (let i = 0; i < all_letters.length; i++) {
+		if (!letters.black_letters.includes(all_letters[i])) {
+			missing_letters.push(all_letters[i]);
+		}
+	}
+	return missing_letters;
+}
+
+function remove_missing_letters() {
+	let missing_letters = get_missing_letters();
+	// remove the missing letters from letter1
+	for (let i = 0; i < missing_letters.length; i++) {
+		let letter = missing_letters[i];
+		let index = letters.letter1.indexOf(letter);
+		if (index > -1) {
+			letters.letter1.splice(index, 1);
+		}
+	}
+	// remove the missing letters from letter2
+	for (let i = 0; i < missing_letters.length; i++) {
+		let letter = missing_letters[i];
+		let index = letters.letter2.indexOf(letter);
+		if (index > -1) {
+			letters.letter2.splice(index, 1);
+		}
+	}
+
+	set_letters();
+
+}
 
 
 function get_wordlist() {
