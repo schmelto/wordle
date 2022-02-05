@@ -1,23 +1,26 @@
 {
-  "name": "wordle",
+  "name": "wordle_solver",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "main": "js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.html"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/schmelto/wordle.git"
+    "url": "git+https://github.com/schmelto/wordle_solver.git"
   },
   "author": "schmelto",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/schmelto/wordle/issues"
+    "url": "https://github.com/schmelto/wordle_solver/issues"
   },
-  "homepage": "https://github.com/schmelto/wordle#readme",
+  "homepage": "https://github.com/schmelto/wordle_solver#readme",
   "devDependencies": {
     "jest": "^27.4.7"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.15"
   }
 }
