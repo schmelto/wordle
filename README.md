@@ -1,3 +1,5 @@
+> This repo is no longer maintained and archived. Feel free to fork and adapt your own changes if you want to continue this project.
+
 # Wordle Solver
 
 This tool helps you to resolve the daily [Worlde Game](https://www.powerlanguage.co.uk/wordle/).
